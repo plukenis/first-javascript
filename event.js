@@ -45,8 +45,8 @@ return;
 console.log("perskaiciau faila d.txt");
 allData += data;
 });
-console.log("allData:", allData);
-// setTimeout(function() {
-// console.log("dirbu");
-// }, 3000);
+
+setTimeout(function() {
+    console.log("allData:", allData);
+}, 100);
 console.log("pabaiga");
