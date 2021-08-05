@@ -1,35 +1,52 @@
 const fs = require("fs");
-
 console.log("pradzia");
-
-fs.readFile("b.txt", {
-    encoding: "utf-8"
-}, function(err, data) {
-    if (err) {
-        console.log("nepavyko perskaityti failo");
-        console.log(err);
-        return;
-    }
-    console.log("perskaiciau faila b.txt");
-    console.log(data);
-});
+let allData = "";
 fs.readFile("a.txt", {
-    encoding: "utf-8"
+encoding: "utf-8"
 }, function(err, data) {
-    if (err) {
-        console.log("nepavyko perskaityti failo");
-        console.log(err);
-        return;
-    }
-    console.log("perskaiciau faila a.txt");
-    console.log(data);
-});
-
-setTimeout(function() {
-    console.log("dirbu");
-}, 3000);
-for (let i = 0; i < 5000000; i++) {
-    for (let j = 0; j < 1000; j++) {
-    }
+if (err) {
+console.log("nepavyko perskaityti failo");
+console.log(err);
+return;
 }
+console.log("perskaiciau faila a.txt");
+allData += data;
+});
+fs.readFile("b.txt", {
+encoding: "utf-8"
+}, function(err, data) {
+if (err) {
+console.log("nepavyko perskaityti failo");
+console.log(err);
+return;
+}
+console.log("perskaiciau faila b.txt");
+allData += data;
+});
+fs.readFile("c.txt", {
+encoding: "utf-8"
+}, function(err, data) {
+if (err) {
+console.log("nepavyko perskaityti failo");
+console.log(err);
+return;
+}
+console.log("perskaiciau faila c.txt");
+allData += data;
+});
+fs.readFile("d.txt", {
+encoding: "utf-8"
+}, function(err, data) {
+if (err) {
+console.log("nepavyko perskaityti failo");
+console.log(err);
+return;
+}
+console.log("perskaiciau faila d.txt");
+allData += data;
+});
+console.log("allData:", allData);
+// setTimeout(function() {
+// console.log("dirbu");
+// }, 3000);
 console.log("pabaiga");
